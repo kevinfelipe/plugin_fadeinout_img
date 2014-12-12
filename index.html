@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>  
+		<meta name="author" content="Julio Cezar Ferreira">
+		<title> fadein fadeout </title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/fadeinout.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery("#fadeinout").FadeInOut();
+			});
+					
+			
+		</script>
+		<style type="text/css">
+			* {margin: 0px;padding: 0px;border: 0px;list-style: none;}
+			ul {width: 100%;height: 550px;position: relative;float: left;}
+			.imgFundo {position: absolute;left: 0px;top: 0px;width: 100%;z-index: 0;}
+			#content_intro {background: none repeat scroll 0 0 #fff;height: 400px;left: 50%;margin-left: -490px;margin-top: -300px;position: absolute;top: 50%;width: 970px;z-index: 1;}
+			#content_intro .wrap {float: right;height: 300px;margin: 10% 1%;overflow: hidden;width: 300px;}
+			.iphone {background: none repeat scroll 0 0 #f00;height: 693px;position: absolute;right: 0;top: 0px;width: 320px;z-index: -1;}
+			#intro {float: left;width: 500px;padding: 30px;}
+		</style>
+	</head>
+	<body>
+		<div id="content_intro">
+			<div id="intro">
+				<h2>
+					Suas fotos, sua história. 
+					Agora em suas mãos
+				</h2>
+				<p>
+					Imprima suas fotos direto do INSTAGRAM. Vários formatos e mídias.
+					Pack de fotos, Posters, Adesivos, Canvas, Bottons e muito mais.
+					Escolha o seu!
+				</p>
+			</div>
+			<span class="wrap" id="fadeinout">
+				<img class="img_head_1" src="img1.jpg" alt="" title="" />
+				<img class="img_head_2" src="img2.jpg" alt="" title="" />
+				<img class="img_head_3" src="img3.jpg" alt="" title="" />		
+			</span>
+			<div style="position:relative;">
+				<div class="iphone"></div>
+			</div>
+		</div>
+		<img class="img_head1 imgFundo" src="img1.jpg" alt="" title="" />
+		<img class="img_head2 imgFundo" src="img2.jpg" alt="" title="" />
+		<img class="img_head3 imgFundo" src="img3.jpg" alt="" title="" />		
+	</body>
+</html>
