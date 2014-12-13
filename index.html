@@ -1,16 +1,18 @@
 <!DOCTYPE HTML>
 <html>
-	<head>  
-		<meta name="author" content="Julio Cezar Ferreira">
+	<head>
 		<title> fadein fadeout </title>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/fadeinout.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function(){
-				jQuery("#fadeinout").FadeInOut();
+				jQuery(".fadeinout img").FadeInOut({
+					time: '3000',
+					timefadeinout: '10',
+					initImg: '3',
+					images: ['img_head_1','img_head_2','img_head_3']
+				});
 			});
-					
-			
 		</script>
 		<style type="text/css">
 			* {margin: 0px;padding: 0px;border: 0px;list-style: none;}
@@ -26,16 +28,14 @@
 		<div id="content_intro">
 			<div id="intro">
 				<h2>
-					Suas fotos, sua história. 
-					Agora em suas mãos
+					Mussum ipsum cacilds. 
+					vidis litro abertis
 				</h2>
 				<p>
-					Imprima suas fotos direto do INSTAGRAM. Vários formatos e mídias.
-					Pack de fotos, Posters, Adesivos, Canvas, Bottons e muito mais.
-					Escolha o seu!
+					Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra la , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Me faiz elementum girarzis, nisi eros vermeio, in elementis me pra quem e amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.
 				</p>
 			</div>
-			<span class="wrap" id="fadeinout">
+			<span class="wrap fadeinout">
 				<img class="img_head_1" src="img1.jpg" alt="" title="" />
 				<img class="img_head_2" src="img2.jpg" alt="" title="" />
 				<img class="img_head_3" src="img3.jpg" alt="" title="" />		
@@ -44,8 +44,11 @@
 				<div class="iphone"></div>
 			</div>
 		</div>
-		<img class="img_head1 imgFundo" src="img1.jpg" alt="" title="" />
-		<img class="img_head2 imgFundo" src="img2.jpg" alt="" title="" />
-		<img class="img_head3 imgFundo" src="img3.jpg" alt="" title="" />		
+			<div class="fadeinout">
+				<img class="img_head_1 imgFundo" src="img1.jpg" alt="" title="" />
+				<img class="img_head_2 imgFundo" src="img2.jpg" alt="" title="" />
+				<img class="img_head_3 imgFundo" src="img3.jpg" alt="" title="" />	
+			</div>
+		</div>	
 	</body>
 </html>

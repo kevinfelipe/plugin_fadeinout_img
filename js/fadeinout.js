@@ -12,13 +12,17 @@
 		var defaults = {
 			'time' : '3000',
 			'timefadeinout' : '10',
-			'initImg' : '1'
+			'initImg' : '1',
+			'images' : ''
 		}
 
 		var settings = $.extend({},defaults,options);
 		var totalDelayTime = 0;
+		var qtdImg = settings.images.length;
+		
+		this.hide();
 
-		return this.each(function(){
+		function init(){
 			var imgClass = new Array();
 			var initTimeFadeInOut = settings.timefadeinout;
 
@@ -29,22 +33,16 @@
 
    			totalDelayTime = parseInt(settings.time) - parseInt(delayTime);
 
-			$("#fadeinout img").each(function(){
-				var img = $(this).attr('class');
-				$("."+img).hide();
-				imgClass.push(img);
-			});
-			imgloop(imgClass);
-		});
+			imgloop(settings.images);
+		}
 
 		function imgloop(img){
-			var qtdImg = img.length;
 			qtdImg--;
 			settings.initImg--;
-
 			var i = settings.initImg;
 			imghideinout(img[i]);
-			i++;
+
+			i == qtdImg ? i=0 : i++;
 			setInterval(function(){
 				imghideinout(img[i]);
 				qtdImg==i ? i=0 : i++;
@@ -52,8 +50,23 @@
 		}
 
 		function imghideinout(img){
-			$("."+img).fadeIn(settings.timefadeinout).delay(totalDelayTime).fadeOut(settings.timefadeinout);
+			$(".fadeinout ."+img).fadeIn(settings.timefadeinout).delay(totalDelayTime).fadeOut(settings.timefadeinout);
 		}
+
+		function validateinit(){
+			if(settings.timefadeinout > 50){
+				alert("O Plugin contém um erro no timefadeinout, tem que ser menor do que 50");
+				return false;
+			} else if(settings.initImg > qtdImg){
+				alert(qtdImg);
+				alert("essa imagem não existe, tem que ser menor que: " + settings.initImg);
+				return false;
+			} else {
+				init();
+			}
+		}
+
+		return validateinit();
 
 	};
 })(jQuery);
