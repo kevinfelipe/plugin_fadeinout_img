@@ -18,9 +18,10 @@
 
 		var settings = $.extend({},defaults,options);
 		var totalDelayTime = 0;
-		var qtdImg = settings.images.length;
+		var qtdImg = settings.images.length;	
+		var selector = $(this);
 		
-		this.hide();
+		selector.find('img').hide();
 
 		function init(){
 			var imgClass = new Array();
@@ -50,7 +51,7 @@
 		}
 
 		function imghideinout(img){
-			$(".fadeinout ."+img).fadeIn(settings.timefadeinout).delay(totalDelayTime).fadeOut(settings.timefadeinout);
+			selector.find("img."+img).fadeIn(settings.timefadeinout).delay(totalDelayTime).fadeOut(settings.timefadeinout);
 		}
 
 		function validateinit(){
@@ -58,7 +59,6 @@
 				alert("O Plugin contém um erro no timefadeinout, tem que ser menor do que 50");
 				return false;
 			} else if(settings.initImg > qtdImg){
-				alert(qtdImg);
 				alert("essa imagem não existe, tem que ser menor que: " + settings.initImg);
 				return false;
 			} else {
